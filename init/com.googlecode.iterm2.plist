@@ -66621,7 +66621,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>138 79 606 456 0 0 1280 778 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 244 796 473 0 0 1280 778 </string>
+	<string>269 223 796 473 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>4 3 1274 769 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -67368,6 +67368,13 @@
 	<false/>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>URLHandlersByGuid</key>
+	<dict>
+		<key>ssh</key>
+		<string>C48B59DF-B27E-4997-BDCA-C73A440BFD73</string>
+		<key>telnet</key>
+		<string>C48B59DF-B27E-4997-BDCA-C73A440BFD73</string>
+	</dict>
 	<key>UseBorder</key>
 	<false/>
 	<key>findIgnoreCase_iTerm</key>
