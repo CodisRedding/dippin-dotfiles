@@ -67311,6 +67311,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>B3D74F9C-4BC2-4CAC-AABF-423B5110409A</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
