@@ -109,6 +109,7 @@ brew install git-extras
 brew install go
 brew install heroku
 brew install htop
+brew install hub
 brew install irssi
 brew install jq
 brew install neovim
