@@ -895,6 +895,33 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
 ###############################################################################
+# Iterm									      #
+###############################################################################
+
+itermconfig="$HOME/init"
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "${itermconfig}"
+defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+
+# Save changes to config when term quits
+defaults write com.googlecode.iterm2 "NoSyncNeverRemindPrefsChangesLostForFile_selection" -integer 0
+
+###############################################################################
+# Powerline Fonts							      #
+###############################################################################
+
+sh fonts/powerline/install.sh
+
+###############################################################################
+# nvm
+###############################################################################
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source "/$HOME/.nvm/nvm.sh"
+nvm install --lts
+nvm alias default lts/*
+npm update npm -g
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

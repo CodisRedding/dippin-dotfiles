@@ -131,7 +131,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
 
@@ -182,4 +182,14 @@
 
 [url "git://gist.github.com/"]
 
-	insteadOf = "gist:"
+  insteadOf = "gist:"
+
+[user]
+
+  name = Rocky Assad
+  email = rocky@fourq.io
+
+[credential]
+
+  helper = GIT_CREDENTIAL_HELPER
+

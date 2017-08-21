@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# Install homebrew
+if test ! $(which brew)
+then
+  if test "$(uname)" = "Darwin"
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+fi
+
+# Install Homebrew-cask
+brew tap caskroom/cask
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -41,7 +54,6 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -77,7 +89,6 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
-#brew install exiv2
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
@@ -91,6 +102,40 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+
+brew install awscli
+brew install gist
+brew install git-extras
+brew install go
+brew install heroku
+brew install htop
+brew install irssi
+brew install jq
+brew install neovim
+brew install sl
+
+brew cask install 1password
+brew cask install bartender
+brew cask install chromium
+brew cask install docker
+brew cask install firefox
+brew cask install flux
+brew cask install gyazo
+brew cask install gitkraken
+brew cask install google-chrome
+brew cask install hipchat
+brew cask install iterm2
+brew cask install jing
+brew cask install kaleidoscope
+brew cask install parallels-desktop
+brew cask install postman
+brew cask install robo-3t
+brew cask install slack
+brew cask install spectacle
+brew cask install spotify
+brew cask install steam
+brew cask install transmission
+brew cask install vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup
