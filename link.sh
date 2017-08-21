@@ -9,3 +9,5 @@ ln -s $DOTFILES_ROOT/bin $HOME
 ln -s $DOTFILES_ROOT/fonts $HOME
 ln -s $DOTFILES_ROOT/init $HOME
 ln -s $DOTFILES_ROOT/.gitconfig $HOME
+
+source ~/.bash_profile
