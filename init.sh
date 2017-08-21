@@ -16,4 +16,4 @@ ln -s $DOTFILES_ROOT/.gitconfig $HOME
 sh brew.sh
 sh .macos
 
-source ~/.bash_profile
+source .bash_profile
