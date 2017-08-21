@@ -1,5 +1,7 @@
 # fork repo
 
+# cd path/where/you/keep/code
+
 # install
 for me
 ```
