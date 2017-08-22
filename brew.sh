@@ -21,6 +21,8 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+brew install java
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
