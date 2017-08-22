@@ -13,6 +13,7 @@ ln -s $DOTFILES_ROOT/fonts $HOME
 ln -s $DOTFILES_ROOT/init $HOME
 ln -s $DOTFILES_ROOT/.gitconfig $HOME
 
+xcode-select --install
 sh brew.sh
 sh .macos
 
