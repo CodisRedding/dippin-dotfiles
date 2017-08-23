@@ -13,5 +13,10 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-.config/configstore
 .irssi/config
+
+.config/.mono/
+.config/NuGet/
+.config/configstore
+.config/nvim/plugged/
+.config/xbuild/
