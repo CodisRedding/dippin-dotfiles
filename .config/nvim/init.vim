@@ -45,7 +45,7 @@ set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader="\\"
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -136,7 +136,7 @@ vnoremap > >gv
 
 " Map space to / (search)
 map <space> /
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader><cr> :nohlsearch<cr>
 
 " better windows navigating
 nnoremap <C-h> <C-w>h
@@ -205,6 +205,17 @@ let g:airline_powerline_fonts = 1
 
 " show status line all the time
 set laststatus=2
+
+"""""""""""""""""""""""""""""""""
+" GO
+" """""""""""""""""""""""""""""""
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
 
 """""""""""""""""""""""""""""""""
 " YUNO:
