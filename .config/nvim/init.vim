@@ -5,16 +5,20 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'chriskempson/base16-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'esneider/YUNOcommit.vim'
 Plug 'fatih/vim-go'
+Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mattn/gist-vim'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-node'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -177,6 +181,11 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+"""""""""""""""""""""""""""""""""
+" React
+" """""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
 
 """""""""""""""""""""""""""""""""
 " NERDTree:
