@@ -119,7 +119,6 @@ brew install sl
 
 brew cask install 1password
 brew cask install bartender
-brew cask install chromium
 brew cask install docker
 brew cask install firefox
 brew cask install flux
