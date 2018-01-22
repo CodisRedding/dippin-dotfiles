@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/CodisRedding/dotfiles-1 dotfiles
+git clone https://github.com/CodisRedding/dippin-dotfiles dotfiles
 
 cd dotfiles
 
