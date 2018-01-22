@@ -1,3 +1,5 @@
+![Image](./nvim.png?raw=true)
+
 # fork repo
 
 # cd path/where/you/keep/code (ex ~/dotfiles)
