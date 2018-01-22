@@ -9,9 +9,15 @@ do
 done
 
 ln -s $DOTFILES_ROOT/bin $HOME
-ln -s $DOTFILES_ROOT/fonts $HOME
 ln -s $DOTFILES_ROOT/init $HOME
 ln -s $DOTFILES_ROOT/.gitconfig $HOME
+
+# Install Nerd fonts for iterm/nvim
+git clone https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+sh install.sh
+cd ..
+rm -rf nerd-font
 
 xcode-select --install
 sh brew.sh

@@ -18,5 +18,8 @@ Thumbs.db
 .config/.mono/
 .config/NuGet/
 .config/configstore
+.config/nvim/.netrwhist
 .config/nvim/plugged/
+# Plug is installed when nvim is first setup via init.vim
+.config/nvim/autoload/plug.vim
 .config/xbuild/

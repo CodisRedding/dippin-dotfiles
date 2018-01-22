@@ -1,164 +1,96 @@
-" auto-install vim-plug
+""""""""""""""""""""""""""""""""""""""
+" Notes
+""""""""""""""""""""""""""""""""""""""
+
+" Nerd Fonts
+" * Font is set and saved via iterm config
+" https://github.com/ryanoasis/nerd-fonts
+" Recommended: 16pt Sauce Code Pro Light Nerd Font Complete
+
+""""""""""""""""""""""""""""""""""""""
+" Always run first
+""""""""""""""""""""""""""""""""""""""
+
+set encoding=utf8
+set termguicolors
+
+""""""""""""""""""""""""""""""""""""""
+" Installation
+""""""""""""""""""""""""""""""""""""""
+
+" auto install Plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
+
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""
+
+" Before vim-devicons
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'chr4/nginx.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
-Plug 'esneider/YUNOcommit.vim'
-Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'mattn/gist-vim'
-Plug 'mileszs/ack.vim'
+Plug 'mattn/webapi-vim'
 Plug 'moll/vim-node'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
 Plug 'takac/vim-spotifysearch'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasiser/vim-code-dark'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/winresizer.vim'
+Plug 'prettier/vim-prettier', {
+    \ 'do': 'npm install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 
-" Initialize plugin system
-call plug#end()
+" After nerdtree
+Plug 'ryanoasis/vim-devicons'
 
-set background=dark
-colorscheme base16-default-dark
+""""""""""""""""""""""""""""""""""""""
+" General config
+""""""""""""""""""""""""""""""""""""""
 
-" Make Vim more useful
-set nocompatible
+" Set font
+" set guifont=SauceCodePro_Nerd_Font_Mono:h16
+
+" Show line numbers
+set number
+
+" Set title
+set title
+
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Optimize for fast terminal connections
-set ttyfast
-" Add the g flag to search/replace by default
-set gdefault
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
+
+" Formatting shortcuts vmap <leader>s :sort<cr>
+
 " Change mapleader
 let mapleader="\\"
-" Don’t add empty newlines at the end of files
-set binary
-set noeol
-" Centralize backups, swapfiles and undo history
-" Make .tmp dir first
-set backupdir=~/.tmp/backups
-set directory=~/.tmp/swaps
-if exists("&undodir")
-	set undodir=~/.tmp/undo
-endif
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
-
-" Respect modeline in files
-set modeline
-set modelines=4
-" Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
-" Enable line numbers
-set number
-" Enable syntax highlighting
-syntax on
-" Highlight current line
-set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Always show status line
-set laststatus=2
-" Enable mouse in all modes
-set mouse=a
-" Disable error bells
-set noerrorbells
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-" Show the cursor position
-set ruler
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-" Show the (partial) command as it’s being typed
-set showcmd
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
 
-" different cursors for insert vs normal mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" formatting shortcuts
-vmap <leader>s :sort<cr>
-
-" remap arrow keys
-"nnoremap <down> :tabprev<CR>
-"nnoremap <left> :bprev<CR>
-"nnoremap <right> :bnext<CR>
-"nnoremap <up> :tabnext<CR>
-
-" smash escape
-inoremap jk <esc>
-inoremap kj <esc>
-
-" change cursor position in insert mode
-inoremap <C-h> <left>
-inoremap <C-l> <right>
-
- " reselect visual block after indent
-vnoremap < <gv
-vnoremap > >gv
+" Use spaces for all indentation
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 " Map space to / (search)
 map <space> /
 map <silent> <leader><cr> :nohlsearch<cr>
 
-" better windows navigating
+" Better windows navigating
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" use spaces for all indentation
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-
-" Resize windows
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>= :vertical resize +5<CR>
-
-"number of command lines to remember
-set history=1000
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -169,86 +101,47 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-endif
+""""""""""""""""""""""""""""""""""""""
+" Plugin config
+""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""
-" React
-" """""""""""""""""""""""""""""""
-let g:jsx_ext_required = 0
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
 
-"""""""""""""""""""""""""""""""""
-" NERDTree:
-"""""""""""""""""""""""""""""""""
-" open when vim opens
+" nerdtree
 autocmd vimenter * NERDTree
-
-" open when C-j
 map <C-n> :NERDTreeToggle<CR>
+" let g:NERDTreeDirArrowExpandable = '→'
+" let g:NERDTreeDirArrowCollapsible = '⤵'
 
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+" base16-vim
+let g:colors_name = "base16-seti"
+" let g:colors_name = "base16-onedark"
 
-" change arrows
-let g:NERDTreeDirArrowExpandable = '→'
-let g:NERDTreeDirArrowCollapsible = '⤵'
+" vim-prettier
+" https://prettier.io/docs/en/vim.html (config options)
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#eslint_integration = 'false'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#parser = 'babylon'
+let g:prettier#config#print_width = 80
+let g:prettier#config#prose_wrap = 'preserve'
+let g:prettier#config#require_config = 'false'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#style_lint_integration = 'false'
+let g:prettier#config#tab_width = 2
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#use_tabs = 'false'
 
-"""""""""""""""""""""""""""""""""
-" Airline:
-"""""""""""""""""""""""""""""""""
-" tabline enabled
-let g:airline#extensions#tabline#enabled = 0
-
-" use powerline fonts
-let g:airline_powerline_fonts = 1
-
-" show status line all the time
-set laststatus=2
-
-"""""""""""""""""""""""""""""""""
-" GO
-" """""""""""""""""""""""""""""""
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-
-"""""""""""""""""""""""""""""""""
-" YUNO:
-"""""""""""""""""""""""""""""""""
-let g:YUNOcommit_after = 10
-
-"""""""""""""""""""""""""""""""""
-" GIST:
-"""""""""""""""""""""""""""""""""
+" gist
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 
-"""""""""""""""""""""""""""""""""
-" JSBeautify:
-"""""""""""""""""""""""""""""""""
-".vimrc
-map <c-f> :call JsBeautify()<cr>
-" or
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-" for json
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-" for jsx
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+call plug#end()
