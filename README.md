@@ -7,7 +7,7 @@
 # install
 for me
 ```
-bash -c "$(curl -H 'Cache-Control: no-cache' -fsSL http://bit.ly/dippin-dotfiles)"
+bash -c "$(curl -H 'Cache-Control: no-cache' -fsSL http://bit.ly/dippindotfiles)"
 ```
 
 for you
