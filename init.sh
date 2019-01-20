@@ -17,7 +17,7 @@ git clone https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 sh install.sh
 cd ..
-rm -rf nerd-font
+rm -rf nerd-fonts
 
 xcode-select --install
 sh brew.sh
